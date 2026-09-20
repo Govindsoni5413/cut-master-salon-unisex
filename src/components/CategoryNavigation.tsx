@@ -23,7 +23,7 @@ export function CategoryNavigation({
       />
 
       {/* Container with horizontal scrolling on mobile, centered flex on desktop */}
-      <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-3 pt-2 px-4 sm:px-0 no-scrollbar sm:flex-wrap sm:justify-center scroll-smooth overscroll-x-contain snap-x snap-mandatory">
+      <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-3 pt-2 px-1 sm:px-0 no-scrollbar sm:flex-wrap sm:justify-center scroll-smooth overscroll-x-contain snap-x snap-mandatory">
         {serviceCategories.map((cat) => {
           const isActive = selectedCategory === cat.key;
           return (

@@ -29,9 +29,9 @@ export function TrustStrip() {
     <section
       id="trust-strip"
       aria-label="Salon Information Overview"
-      className="relative z-10 -mt-6 sm:-mt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="relative z-10 -mt-6 sm:-mt-8 px-0 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
-      <div className="glass-card-3d rounded-3xl p-5 sm:p-7 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200/70">
+      <div className="glass-card-3d rounded-none sm:rounded-3xl p-3 sm:p-7 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200/70">
         {trustPoints.map((item, idx) => {
           const Icon = item.icon;
           return (
