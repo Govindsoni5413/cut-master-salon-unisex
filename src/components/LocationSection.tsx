@@ -8,8 +8,8 @@ export function LocationSection() {
       aria-label="Location and Contact"
       className="py-24 sm:py-32 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-14 px-3 sm:px-0">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <MapPin className="h-3.5 w-3.5 text-amber-600" />
             <span>Visit Our Salon</span>
@@ -25,9 +25,9 @@ export function LocationSection() {
         </div>
 
         {/* 3D Location Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-8 items-stretch">
           {/* Details Column */}
-          <div className="lg:col-span-6 glass-card-3d rounded-3xl p-6 sm:p-9 text-left flex flex-col justify-between">
+          <div className="lg:col-span-6 glass-card-3d rounded-2xl sm:rounded-3xl p-4 sm:p-9 text-left flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -142,7 +142,7 @@ export function LocationSection() {
           </div>
 
           {/* Map Preview / Location Card */}
-          <div className="lg:col-span-6 glass-card-3d rounded-3xl p-3.5 sm:p-4 flex flex-col justify-between overflow-hidden">
+          <div className="lg:col-span-6 glass-card-3d rounded-2xl sm:rounded-3xl p-2 sm:p-4 flex flex-col justify-between overflow-hidden">
             <div className="relative w-full h-[360px] sm:h-full min-h-[340px] rounded-2xl overflow-hidden shadow-inner bg-stone-100 flex items-center justify-center group">
               {/* Stylized Map View Visual */}
               <div

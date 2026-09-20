@@ -13,7 +13,7 @@ export function AboutSection({ onVisitClick }: AboutSectionProps) {
       aria-label="About Cut Master Salon"
       className="py-24 sm:py-32 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Visual Image with 3D Glass Framing */}
           <motion.div
@@ -59,7 +59,7 @@ export function AboutSection({ onVisitClick }: AboutSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-6 flex flex-col items-start text-left"
+            className="lg:col-span-6 flex flex-col items-start text-left px-3 sm:px-0"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
               <span>About Us</span>

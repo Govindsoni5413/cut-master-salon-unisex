@@ -14,14 +14,14 @@ export function Hero({ onExploreServices, onOpenBookingModal }: HeroProps) {
       aria-label="Hero Section"
       className="relative min-h-[92vh] pt-28 sm:pt-32 pb-16 flex items-center justify-center overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* ================= LEFT HERO COLUMN ================= */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 flex flex-col items-start text-left"
+            className="lg:col-span-7 flex flex-col items-start text-left px-3 sm:px-0"
           >
             {/* Location Pill / 3D Label */}
             <div

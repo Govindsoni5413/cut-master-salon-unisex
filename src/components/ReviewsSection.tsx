@@ -14,8 +14,8 @@ export function ReviewsSection() {
       aria-label="Client Feedback"
       className="py-24 sm:py-32 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-14 px-3 sm:px-0">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <MessageSquare className="h-3.5 w-3.5 text-amber-600" />
             <span>Community Feedback</span>
@@ -31,11 +31,11 @@ export function ReviewsSection() {
         </div>
 
         {/* Placeholders clearly marked without fabricated ratings */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-8">
           {reviewPlaceholders.map((item) => (
             <div
               key={item.id}
-              className="glass-card-3d rounded-3xl p-6 sm:p-7 text-left flex flex-col justify-between"
+              className="glass-card-3d rounded-2xl sm:rounded-3xl p-4 sm:p-7 text-left flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-neutral-200/70">

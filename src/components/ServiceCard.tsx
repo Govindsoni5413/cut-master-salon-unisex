@@ -46,7 +46,7 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
       }}
       onClick={() => onSelectService(service)}
       id={`service-card-${service.id}`}
-      className="glass-card-3d rounded-3xl p-3 sm:p-3.5 flex flex-col justify-between group cursor-pointer text-left"
+      className="glass-card-3d rounded-2xl sm:rounded-3xl p-1.5 sm:p-3.5 flex flex-col justify-between group cursor-pointer text-left"
     >
       <div>
         {/* ================= SERVICE PREVIEW IMAGE ABOVE EACH SERVICE CARD ================= */}

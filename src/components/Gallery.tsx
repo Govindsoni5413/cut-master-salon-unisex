@@ -21,9 +21,9 @@ export function Gallery() {
       aria-label="Salon Gallery"
       className="py-24 sm:py-32 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 px-3 sm:px-0">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <Camera className="h-3.5 w-3.5 text-amber-600" />
             <span>Visual Portfolio</span>
@@ -39,7 +39,7 @@ export function Gallery() {
         </div>
 
         {/* Gallery Categories */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar overscroll-x-contain snap-x snap-mandatory px-4 sm:px-0">
+        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar overscroll-x-contain snap-x snap-mandatory px-1 sm:px-0">
           {galleryCategories.map((cat) => (
             <button
               key={cat}
@@ -56,12 +56,12 @@ export function Gallery() {
         </div>
 
         {/* 3D Glass Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
           {filteredItems.map((item) => (
             <div
               key={item.id}
               onClick={() => setActiveLightboxItem(item)}
-              className="glass-card-3d rounded-3xl p-3 sm:p-3.5 group cursor-pointer text-left relative overflow-hidden touch-manipulation"
+              className="glass-card-3d rounded-2xl sm:rounded-3xl p-1.5 sm:p-3.5 group cursor-pointer text-left relative overflow-hidden touch-manipulation"
             >
               <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-inner bg-neutral-100">
                 <img
