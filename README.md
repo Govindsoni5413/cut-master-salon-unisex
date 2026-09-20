@@ -1,20 +1,21 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Cut Master Salon Unisex
 
-# Run and deploy your AI Studio app
+Premium Hair & Beauty Salon in Vadodara (SWC Hub, Vasna - Bhayli Road, Bhayli, Vadodara - 391410).
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/c1241d01-c06f-48a7-a72c-59082a55b6ba
+## Features
+- Complete curated service menu with transparent pricing across Hair, Beauty, Skin, Body, Waxing, and Manicure/Pedicure
+- D-TEN Clarifying Rituals with Female / Male treatment comparison
+- Instant WhatsApp appointment booking with pre-filled service details and preferred schedule
+- Visual portfolio gallery with category filters and lightbox view
+- Fully responsive 3D glassmorphic design and ambient animations
 
 ## Run Locally
+```bash
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Production Build
+```bash
+npm run build
+```
