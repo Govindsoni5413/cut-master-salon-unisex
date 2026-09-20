@@ -1,0 +1,6 @@
+{
+  "name": "Cut Master Salon Unisex",
+  "description": "Cut Master Salon Unisex in Vadodara offers professional hair styling, grooming and beauty services for men and women. Book your appointment on WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
