@@ -146,7 +146,7 @@ export function Navbar({ onOpenBookingModal }: NavbarProps) {
           <button
             id="mobile-menu-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-neutral-100/90 hover:bg-neutral-200 text-neutral-800 border border-neutral-200/80 flex items-center justify-center shrink-0 transition-colors cursor-pointer active:scale-95 shadow-xs"
+            className="md:hidden min-h-[40px] min-w-[40px] rounded-full bg-neutral-100/90 hover:bg-neutral-200 text-neutral-800 border border-neutral-200/80 flex items-center justify-center shrink-0 transition-colors cursor-pointer active:scale-95 shadow-xs touch-manipulation"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -175,7 +175,7 @@ export function Navbar({ onOpenBookingModal }: NavbarProps) {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               id="mobile-nav-drawer"
-              className="md:hidden fixed top-16 inset-x-2.5 max-w-sm mx-auto glass-pill-scrolled rounded-3xl p-4 sm:p-5 shadow-2xl z-50 border border-white/95 max-h-[85vh] overflow-y-auto pointer-events-auto"
+              className="md:hidden fixed top-16 inset-x-2.5 max-w-sm mx-auto glass-pill-scrolled rounded-3xl p-4 sm:p-5 shadow-2xl z-50 border border-white/95 max-h-[85dvh] overflow-y-auto pointer-events-auto"
             >
               {/* Drawer Top Bar */}
               <div className="flex items-center justify-between pb-3 mb-2 border-b border-neutral-200/70">

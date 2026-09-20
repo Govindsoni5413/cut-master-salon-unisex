@@ -64,13 +64,13 @@ export function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/95 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.3),0_0_0_1px_rgba(229,231,235,0.8),inset_0_1px_2px_rgba(255,255,255,1)] p-4 sm:p-7 z-10 my-auto overscroll-contain"
+          className="relative w-full max-w-2xl max-h-[90dvh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/95 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.3),0_0_0_1px_rgba(229,231,235,0.8),inset_0_1px_2px_rgba(255,255,255,1)] p-4 sm:p-7 z-10 my-auto overscroll-contain"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
             aria-label="Close service modal"
-            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-neutral-700 hover:text-neutral-950 border border-neutral-200/80 shadow-md transition-all cursor-pointer active:scale-95"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-neutral-700 hover:text-neutral-950 border border-neutral-200/80 shadow-md transition-all cursor-pointer active:scale-95 touch-manipulation"
           >
             <X className="h-5 w-5" />
           </button>
@@ -83,6 +83,7 @@ export function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps
                 src={service.image}
                 alt={service.name}
                 className="h-full w-full object-cover object-center"
+                decoding="async"
               />
               <div
                 aria-hidden="true"

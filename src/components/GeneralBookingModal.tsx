@@ -66,11 +66,11 @@ export function GeneralBookingModal({ isOpen, onClose }: GeneralBookingModalProp
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-lg max-h-[88vh] overflow-y-auto overscroll-contain rounded-3xl bg-white/95 backdrop-blur-2xl border border-white p-5 sm:p-8 shadow-2xl z-10 text-left my-auto"
+          className="relative w-full max-w-lg max-h-[90dvh] overflow-y-auto overscroll-contain rounded-3xl bg-white/95 backdrop-blur-2xl border border-white p-5 sm:p-8 shadow-2xl z-10 text-left my-auto"
         >
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer active:scale-95"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer active:scale-95 touch-manipulation"
             aria-label="Close booking modal"
           >
             <X className="h-5 w-5" />

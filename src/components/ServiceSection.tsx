@@ -101,7 +101,7 @@ export function ServiceSection() {
                     <button
                       key={sub}
                       onClick={() => setSelectedSubcategory(sub)}
-                      className={`min-h-[38px] px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 ${
+                      className={`min-h-[38px] px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 touch-manipulation ${
                         isSelected
                           ? 'bg-neutral-900 text-amber-200 shadow-md ring-1 ring-neutral-900/10'
                           : 'bg-white/95 hover:bg-white text-neutral-700 hover:text-neutral-950 border border-neutral-200/90 hover:border-neutral-300 shadow-xs'
@@ -129,10 +129,10 @@ export function ServiceSection() {
                 <button
                   type="button"
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-neutral-200 hover:bg-neutral-300 text-neutral-600 flex items-center justify-center transition-colors cursor-pointer"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-neutral-200 hover:bg-neutral-300 text-neutral-600 flex items-center justify-center transition-colors cursor-pointer touch-manipulation"
                   title="Clear search"
                 >
-                  <X className="h-3 w-3" />
+                  <X className="h-3.5 w-3.5" />
                 </button>
               )}
             </div>

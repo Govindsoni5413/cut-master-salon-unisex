@@ -56,6 +56,7 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
             alt={`${service.name} at Cut Master Salon Unisex`}
             className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
             loading="lazy"
+            decoding="async"
           />
 
           {/* Subdued Glass Gradient Reflection */}
@@ -104,7 +105,7 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
           type="button"
           onClick={handleDirectWhatsAppBook}
           id={`book-now-${service.id}`}
-          className="glass-button-primary flex-1 min-h-[44px] py-2.5 px-3 rounded-2xl text-xs font-bold tracking-wider flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-transform"
+          className="glass-button-primary flex-1 min-h-[44px] py-2.5 px-3 rounded-2xl text-xs font-bold tracking-wider flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 transition-transform touch-manipulation"
         >
           <Calendar className="h-3.5 w-3.5 text-amber-300 shrink-0" />
           <span>BOOK NOW</span>
@@ -116,7 +117,7 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
             e.stopPropagation();
             onSelectService(service);
           }}
-          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-2xl bg-white/80 hover:bg-white text-neutral-700 hover:text-neutral-950 border border-neutral-200 shadow-sm transition-all active:scale-95"
+          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-2xl bg-white/80 hover:bg-white text-neutral-700 hover:text-neutral-950 border border-neutral-200 shadow-sm transition-all active:scale-95 touch-manipulation"
           title="View Service Details"
           aria-label={`View details for ${service.name}`}
         >

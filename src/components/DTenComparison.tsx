@@ -39,7 +39,7 @@ export function DTenComparison() {
           <button
             type="button"
             onClick={() => setSelectedGender('FEMALE')}
-            className={`flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center ${
+            className={`flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center touch-manipulation ${
               selectedGender === 'FEMALE'
                 ? 'bg-neutral-900 text-amber-200 shadow-md'
                 : 'text-neutral-600 hover:text-neutral-900'
@@ -50,7 +50,7 @@ export function DTenComparison() {
           <button
             type="button"
             onClick={() => setSelectedGender('MALE')}
-            className={`flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center ${
+            className={`flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center touch-manipulation ${
               selectedGender === 'MALE'
                 ? 'bg-neutral-900 text-amber-200 shadow-md'
                 : 'text-neutral-600 hover:text-neutral-900'

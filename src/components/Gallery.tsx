@@ -39,12 +39,12 @@ export function Gallery() {
         </div>
 
         {/* Gallery Categories */}
-        <div className="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar overscroll-x-contain snap-x snap-mandatory px-4 sm:px-0">
           {galleryCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer ${
+              className={`min-h-[38px] px-4 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer snap-start touch-manipulation whitespace-nowrap shrink-0 ${
                 activeCategory === cat
                   ? 'bg-neutral-900 text-amber-200 shadow-md scale-105'
                   : 'bg-white/80 text-neutral-600 hover:text-neutral-900 border border-neutral-200/80 shadow-xs'
@@ -61,7 +61,7 @@ export function Gallery() {
             <div
               key={item.id}
               onClick={() => setActiveLightboxItem(item)}
-              className="glass-card-3d rounded-3xl p-3 sm:p-3.5 group cursor-pointer text-left relative overflow-hidden"
+              className="glass-card-3d rounded-3xl p-3 sm:p-3.5 group cursor-pointer text-left relative overflow-hidden touch-manipulation"
             >
               <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-inner bg-neutral-100">
                 <img
@@ -69,6 +69,7 @@ export function Gallery() {
                   alt={item.title}
                   className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
                   loading="lazy"
+                  decoding="async"
                 />
 
                 <div
