@@ -83,14 +83,16 @@ export function LocationSection() {
                     href={`tel:${businessConfig.phonePrimary.replace(/\s+/g, '')}`}
                     className="hover:text-amber-800 transition-colors"
                   >
-                    Primary: {businessConfig.phonePrimary}
+                    {businessConfig.phonePrimary}
                   </a>
-                  <a
-                    href={`tel:${businessConfig.phoneSecondary.replace(/\s+/g, '')}`}
-                    className="hover:text-amber-800 transition-colors"
-                  >
-                    Secondary: {businessConfig.phoneSecondary}
-                  </a>
+                  {businessConfig.phoneSecondary && (
+                    <a
+                      href={`tel:${businessConfig.phoneSecondary.replace(/\s+/g, '')}`}
+                      className="hover:text-amber-800 transition-colors"
+                    >
+                      {businessConfig.phoneSecondary}
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

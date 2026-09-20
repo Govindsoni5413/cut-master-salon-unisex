@@ -2,7 +2,6 @@ import { BusinessConfig } from '../types';
 
 export const WHATSAPP_NUMBER = '918160770905';
 export const PHONE_PRIMARY = '+91 81607 70905';
-export const PHONE_SECONDARY = '+91 84900 06932';
 
 export const businessConfig: BusinessConfig = {
   name: 'CUT MASTER SALON UNISEX',
@@ -14,7 +13,6 @@ export const businessConfig: BusinessConfig = {
   addressFull:
     '34,35, Ground Floor SWC Hub, Opp. Rajpath Complex, Vasna - Bhayli Road, Bhayli, Vadodara - 391410',
   phonePrimary: PHONE_PRIMARY,
-  phoneSecondary: PHONE_SECONDARY,
   whatsappNumber: WHATSAPP_NUMBER,
   instagramHandle: '@cutmastersalon',
   instagramUrl: 'https://www.instagram.com/cutmastersalon/',

@@ -45,7 +45,7 @@ export interface BusinessConfig {
   addressLine1: string;
   addressFull: string;
   phonePrimary: string;
-  phoneSecondary: string;
+  phoneSecondary?: string;
   whatsappNumber: string;
   instagramHandle: string;
   instagramUrl: string;
