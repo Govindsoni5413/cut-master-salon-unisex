@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Calendar, Check, ShieldCheck } from 'lucide-react';
 import { dTenDataMale, dTenDataFemale } from '../config/services';
 import { createWhatsAppBookingUrl } from '../config/businessConfig';
@@ -39,24 +40,38 @@ export function DTenComparison() {
           <button
             type="button"
             onClick={() => setSelectedGender('FEMALE')}
-            className={`flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center touch-manipulation ${
+            className={`relative flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-colors duration-200 cursor-pointer active:scale-95 flex items-center justify-center touch-manipulation ${
               selectedGender === 'FEMALE'
-                ? 'bg-neutral-900 text-amber-200 shadow-md'
+                ? 'text-amber-200'
                 : 'text-neutral-600 hover:text-neutral-900'
             }`}
           >
-            FEMALE
+            {selectedGender === 'FEMALE' && (
+              <motion.div
+                layoutId="activeDTenGender"
+                className="absolute inset-0 bg-neutral-900 rounded-full shadow-md"
+                transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+              />
+            )}
+            <span className="relative z-10">FEMALE</span>
           </button>
           <button
             type="button"
             onClick={() => setSelectedGender('MALE')}
-            className={`flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center touch-manipulation ${
+            className={`relative flex-1 sm:flex-initial min-h-[42px] px-5 py-2 rounded-full text-xs font-bold tracking-wider transition-colors duration-200 cursor-pointer active:scale-95 flex items-center justify-center touch-manipulation ${
               selectedGender === 'MALE'
-                ? 'bg-neutral-900 text-amber-200 shadow-md'
+                ? 'text-amber-200'
                 : 'text-neutral-600 hover:text-neutral-900'
             }`}
           >
-            MALE
+            {selectedGender === 'MALE' && (
+              <motion.div
+                layoutId="activeDTenGender"
+                className="absolute inset-0 bg-neutral-900 rounded-full shadow-md"
+                transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+              />
+            )}
+            <span className="relative z-10">MALE</span>
           </button>
         </div>
       </div>

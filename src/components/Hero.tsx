@@ -66,23 +66,27 @@ export function Hero({ onExploreServices, onOpenBookingModal }: HeroProps) {
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
-              <button
+              <motion.button
                 id="hero-book-appointment-btn"
                 onClick={onOpenBookingModal}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="glass-button-primary w-full sm:w-auto min-h-[48px] px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-bold tracking-wider flex items-center justify-center gap-2.5 cursor-pointer shadow-lg active:scale-98"
               >
                 <Calendar className="h-4 w-4 text-amber-300" />
                 <span>BOOK APPOINTMENT</span>
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
                 id="hero-explore-services-btn"
                 onClick={onExploreServices}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="glass-button-secondary w-full sm:w-auto min-h-[48px] px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold tracking-wider flex items-center justify-center gap-2 cursor-pointer active:scale-98"
               >
                 <span>EXPLORE SERVICES</span>
                 <ArrowRight className="h-4 w-4 text-neutral-500" />
-              </button>
+              </motion.button>
             </div>
 
             {/* Contact Quick Link */}

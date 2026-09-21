@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { ServiceCategoryKey } from '../types';
 import { serviceCategories } from '../config/services';
 
@@ -31,13 +32,20 @@ export function CategoryNavigation({
               key={cat.key}
               id={`cat-nav-${cat.key.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
               onClick={() => onSelectCategory(cat.key)}
-              className={`shrink-0 min-h-[44px] px-4.5 sm:px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 cursor-pointer select-none active:scale-95 flex items-center snap-start touch-manipulation ${
+              className={`relative shrink-0 min-h-[44px] px-4.5 sm:px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-colors duration-200 cursor-pointer select-none active:scale-95 flex items-center snap-start touch-manipulation ${
                 isActive
-                  ? 'bg-neutral-900 text-amber-200 shadow-[0_10px_22px_-6px_rgba(0,0,0,0.28),0_0_0_1px_rgba(0,0,0,0.9),inset_0_1px_2px_rgba(255,255,255,0.4)] sm:-translate-y-0.5'
+                  ? 'text-amber-200'
                   : 'bg-white/90 text-neutral-700 hover:text-neutral-950 border border-white/95 hover:border-neutral-300 shadow-[0_4px_12px_-2px_rgba(15,23,42,0.06),0_0_0_1px_rgba(226,232,240,0.7),inset_0_1px_1px_rgba(255,255,255,0.9)]'
               }`}
             >
-              <div className="flex items-center gap-2">
+              {isActive && (
+                <motion.div
+                  layoutId="activeCategoryPill"
+                  className="absolute inset-0 bg-neutral-900 rounded-full shadow-[0_10px_22px_-6px_rgba(0,0,0,0.28),0_0_0_1px_rgba(0,0,0,0.9),inset_0_1px_2px_rgba(255,255,255,0.4)]"
+                  transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                />
+              )}
+              <div className="relative z-10 flex items-center gap-2">
                 <span>{cat.label}</span>
                 {isActive && (
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shrink-0" />
