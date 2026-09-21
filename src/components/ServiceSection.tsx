@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { motion } from 'motion/react';
 import { Search, Sparkles, SlidersHorizontal, X, RotateCcw } from 'lucide-react';
 import { ServiceCategoryKey, ServiceItem } from '../types';
 import { services, serviceCategories } from '../config/services';
@@ -26,7 +27,6 @@ export function ServiceSection() {
   const handleSelectCategory = (cat: ServiceCategoryKey) => {
     setSelectedCategory(cat);
     setSelectedSubcategory('ALL');
-    setSearchQuery('');
   };
 
   const handleResetFilters = () => {
@@ -34,19 +34,20 @@ export function ServiceSection() {
     setSearchQuery('');
   };
 
-  // Filtered services
+  // Filtered services based on category, subcategory and search term
   const filteredServices = useMemo(() => {
-    return services.filter((s) => {
-      const matchesCategory = s.category === selectedCategory;
-      const matchesSubcategory =
-        selectedSubcategory === 'ALL' || s.subcategory === selectedSubcategory;
-      const matchesSearch =
-        searchQuery.trim() === '' ||
-        s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        s.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (s.subcategory && s.subcategory.toLowerCase().includes(searchQuery.toLowerCase()));
+    return services.filter((item) => {
+      const matchCat = item.category === selectedCategory;
+      const matchSub =
+        selectedSubcategory === 'ALL' || item.subcategory === selectedSubcategory;
+      const query = searchQuery.toLowerCase().trim();
+      const matchQuery =
+        !query ||
+        item.name.toLowerCase().includes(query) ||
+        item.description.toLowerCase().includes(query) ||
+        (item.subcategory && item.subcategory.toLowerCase().includes(query));
 
-      return matchesCategory && matchesSubcategory && matchesSearch;
+      return matchCat && matchSub && matchQuery;
     });
   }, [selectedCategory, selectedSubcategory, searchQuery]);
 
@@ -60,7 +61,13 @@ export function ServiceSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <Sparkles className="h-3.5 w-3.5 text-amber-600" />
             <span>Curated Service Menu</span>
@@ -73,7 +80,7 @@ export function ServiceSection() {
           <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-neutral-600 font-normal">
             Transparent pricing, authentic salon craft, and personalized care. Every service can be booked instantly on WhatsApp.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3D Category Navigation */}
         <div className="mb-6 sm:mb-8 -mx-4 sm:mx-0">
@@ -84,7 +91,13 @@ export function ServiceSection() {
         </div>
 
         {/* Search & Subcategory Controls — Premium High-End Glass Bar */}
-        <div className="mb-8 sm:mb-10 rounded-2xl sm:rounded-3xl bg-white/85 backdrop-blur-xl border border-white/95 shadow-[0_12px_36px_-12px_rgba(20,20,30,0.08),0_0_0_1px_rgba(226,232,240,0.8),inset_0_1px_2px_rgba(255,255,255,1)] p-3 sm:p-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 sm:mb-10 rounded-2xl sm:rounded-3xl bg-white/85 backdrop-blur-xl border border-white/95 shadow-[0_12px_36px_-12px_rgba(20,20,30,0.08),0_0_0_1px_rgba(226,232,240,0.8),inset_0_1px_2px_rgba(255,255,255,1)] p-3 sm:p-4"
+        >
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3.5 sm:gap-4">
             {/* Subcategories Filter Rail */}
             <div className="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
@@ -161,7 +174,7 @@ export function ServiceSection() {
               </button>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Services Grid with Preview Image ABOVE Each Service Card */}
         {filteredServices.length > 0 ? (

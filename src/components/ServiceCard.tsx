@@ -36,13 +36,16 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
         transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-        transition: 'transform 0.2s cubic-bezier(0.22, 1, 0.36, 1)',
       }}
       onClick={() => onSelectService(service)}
       id={`service-card-${service.id}`}
@@ -124,6 +127,6 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
           <ArrowUpRight className="h-4 w-4" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

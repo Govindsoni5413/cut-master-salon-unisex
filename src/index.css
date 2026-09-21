@@ -91,6 +91,8 @@
 }
 
 .glass-button-primary {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, #1f1f23 0%, #121214 100%);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -99,7 +101,34 @@
     0 0 0 1px rgba(0, 0, 0, 0.8),
     inset 0 1px 1px rgba(255, 255, 255, 0.35),
     inset 0 -1px 1px rgba(0, 0, 0, 0.4);
-  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-button-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 35%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: buttonShimmer 5s infinite ease-in-out;
+}
+
+@keyframes buttonShimmer {
+  0%, 75% {
+    left: -60%;
+  }
+  100% {
+    left: 140%;
+  }
 }
 
 .glass-button-primary:hover {

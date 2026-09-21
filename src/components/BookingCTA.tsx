@@ -14,7 +14,13 @@ export function BookingCTA() {
       className="py-10 sm:py-20 relative z-10 overflow-hidden"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-14 glass-card-3d border border-white/95 text-center overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08),0_0_0_1px_rgba(229,231,235,0.9),inset_0_1px_2px_rgba(255,255,255,1)]">
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-14 glass-card-3d border border-white/95 text-center overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08),0_0_0_1px_rgba(229,231,235,0.9),inset_0_1px_2px_rgba(255,255,255,1)]"
+        >
           {/* Floating Glass Decorative Geometry */}
           <motion.div
             animate={{ y: [0, -10, 0], rotate: [0, 4, 0] }}
@@ -70,7 +76,7 @@ export function BookingCTA() {
               Vadodara: 34,35, Ground Floor SWC Hub, Opp. Rajpath Complex, Vasna - Bhayli Road
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

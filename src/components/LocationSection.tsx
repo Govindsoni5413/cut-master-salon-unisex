@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { MapPin, Phone, MessageSquare, Navigation, Instagram, Clock, ExternalLink } from 'lucide-react';
 import { businessConfig, createWhatsAppBookingUrl } from '../config/businessConfig';
 
@@ -9,7 +10,13 @@ export function LocationSection() {
       className="py-12 sm:py-20 lg:py-28 relative z-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-14"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <MapPin className="h-3.5 w-3.5 text-amber-600" />
             <span>Visit Our Salon</span>
@@ -22,12 +29,18 @@ export function LocationSection() {
           <p className="mt-3 text-sm sm:text-base text-neutral-600">
             Conveniently located on Vasna - Bhayli Road, Vadodara.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3D Location Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           {/* Details Column */}
-          <div className="lg:col-span-6 glass-card-3d rounded-2xl sm:rounded-3xl p-5 sm:p-9 text-left flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 glass-card-3d rounded-2xl sm:rounded-3xl p-5 sm:p-9 text-left flex flex-col justify-between"
+          >
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -141,10 +154,16 @@ export function LocationSection() {
                 <span>INSTAGRAM</span>
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Map Preview / Location Card */}
-          <div className="lg:col-span-6 glass-card-3d rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 flex flex-col justify-between overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 glass-card-3d rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 flex flex-col justify-between overflow-hidden"
+          >
             <div className="relative w-full h-[300px] sm:h-full min-h-[280px] rounded-2xl overflow-hidden shadow-inner bg-stone-100 flex items-center justify-center group">
               {/* Stylized Map View Visual */}
               <div
@@ -157,7 +176,11 @@ export function LocationSection() {
               <div className="absolute inset-0 bg-stone-900/30 backdrop-blur-[1px]" />
 
               {/* Center Pin Indicator */}
-              <div className="relative z-10 p-6 rounded-3xl bg-white/90 backdrop-blur-xl border border-white shadow-2xl text-center max-w-sm mx-4">
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative z-10 p-6 rounded-3xl bg-white/90 backdrop-blur-xl border border-white shadow-2xl text-center max-w-sm mx-4"
+              >
                 <div className="h-12 w-12 rounded-full bg-neutral-900 text-amber-300 mx-auto flex items-center justify-center shadow-lg mb-3">
                   <MapPin className="h-6 w-6" />
                 </div>
@@ -177,9 +200,9 @@ export function LocationSection() {
                   <span>Open in Google Maps</span>
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

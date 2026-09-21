@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Instagram, ArrowUpRight, Sparkles } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
 
@@ -16,7 +17,13 @@ export function InstagramSection() {
       className="py-10 sm:py-20 lg:py-28 relative z-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-card-3d rounded-2xl sm:rounded-3xl p-6 sm:p-12 text-center relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="glass-card-3d rounded-2xl sm:rounded-3xl p-6 sm:p-12 text-center relative overflow-hidden"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <Instagram className="h-3.5 w-3.5 text-pink-600" />
             <span>Social Channel</span>
@@ -37,7 +44,12 @@ export function InstagramSection() {
           {/* Curated visual grid leading to Instagram */}
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {previewShots.map((img, i) => (
-              <a
+              <motion.a
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.03 }}
                 key={i}
                 href={businessConfig.instagramUrl}
                 target="_blank"
@@ -53,7 +65,7 @@ export function InstagramSection() {
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                   <Instagram className="h-6 w-6" />
                 </div>
-              </a>
+              </motion.a>
             ))}
           </div>
 
@@ -70,7 +82,7 @@ export function InstagramSection() {
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

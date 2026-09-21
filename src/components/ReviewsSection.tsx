@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { MessageSquare, MessageCircle, ShieldCheck } from 'lucide-react';
 import { businessConfig, createWhatsAppBookingUrl } from '../config/businessConfig';
 
@@ -15,7 +16,13 @@ export function ReviewsSection() {
       className="py-12 sm:py-20 lg:py-28 relative z-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-14"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <MessageSquare className="h-3.5 w-3.5 text-amber-600" />
             <span>Community Feedback</span>
@@ -28,12 +35,16 @@ export function ReviewsSection() {
           <p className="mt-3 text-sm sm:text-base text-neutral-600">
             Real experiences from visitors at our Vadodara salon.
           </p>
-        </div>
+        </motion.div>
 
         {/* Placeholders clearly marked without fabricated ratings */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
-          {reviewPlaceholders.map((item) => (
-            <div
+          {reviewPlaceholders.map((item, idx) => (
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: idx * 0.12, ease: [0.22, 1, 0.36, 1] }}
               key={item.id}
               className="glass-card-3d rounded-2xl sm:rounded-3xl p-5 sm:p-7 text-left flex flex-col justify-between"
             >
@@ -59,7 +70,7 @@ export function ReviewsSection() {
                 <span>Cut Master Salon Unisex</span>
                 <span>Vadodara</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
