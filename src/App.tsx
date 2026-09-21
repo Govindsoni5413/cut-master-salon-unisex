@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, useScroll, useSpring } from 'motion/react';
+import { motion, useScroll } from 'motion/react';
 import { AnimatedBackground } from './components/AnimatedBackground';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -18,11 +18,6 @@ import { GeneralBookingModal } from './components/GeneralBookingModal';
 export default function App() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
 
   const scrollToServices = () => {
     const el = document.getElementById('services');
@@ -42,7 +37,7 @@ export default function App() {
     <div className="relative min-h-screen font-sans text-neutral-900 bg-[#FBFBFD] selection:bg-neutral-900 selection:text-amber-200">
       {/* Luxury Golden Scroll Progress Indicator */}
       <motion.div
-        style={{ scaleX }}
+        style={{ scaleX: scrollYProgress }}
         className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600 origin-left z-[999] pointer-events-none shadow-[0_0_8px_rgba(217,119,6,0.4)]"
       />
 

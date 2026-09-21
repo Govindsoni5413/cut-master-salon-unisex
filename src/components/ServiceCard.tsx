@@ -1,5 +1,3 @@
-import { useState, useRef } from 'react';
-import { motion } from 'motion/react';
 import { Calendar, ArrowUpRight, Sparkles } from 'lucide-react';
 import { ServiceItem } from '../types';
 import { createWhatsAppBookingUrl } from '../config/businessConfig';
@@ -10,24 +8,7 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const cardRef = useRef<HTMLDivElement>(null);
-
   const priceText = `₹${service.price.toLocaleString('en-IN')}${service.starred ? '*' : ''}`;
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only apply tilt on devices with hover capability to keep mobile smooth and battery-efficient
-    if (window.matchMedia && !window.matchMedia('(hover: hover)').matches) return;
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: x * 6, y: -y * 6 });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-  };
 
   const handleDirectWhatsAppBook = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -36,20 +17,10 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-      }}
+    <div
       onClick={() => onSelectService(service)}
       id={`service-card-${service.id}`}
-      className="glass-card-3d rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 flex flex-col justify-between group cursor-pointer text-left"
+      className="glass-card-3d rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 flex flex-col justify-between group cursor-pointer text-left transition-all duration-300 hover:-translate-y-1.5 will-change-transform"
     >
       <div>
         {/* ================= SERVICE PREVIEW IMAGE ABOVE EACH SERVICE CARD ================= */}
@@ -127,6 +98,6 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
           <ArrowUpRight className="h-4 w-4" />
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 }

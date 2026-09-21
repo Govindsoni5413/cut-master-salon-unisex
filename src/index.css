@@ -65,29 +65,22 @@
 }
 
 .glass-card-3d {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: #ffffff;
+  border: 1px solid rgba(229, 231, 235, 0.85);
   box-shadow:
-    0 20px 35px -15px rgba(28, 25, 23, 0.06),
-    0 4px 12px -2px rgba(28, 25, 23, 0.03),
-    0 0 0 1px rgba(229, 231, 235, 0.75),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.02);
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.35s ease;
+    0 4px 20px -2px rgba(28, 25, 23, 0.05),
+    0 0 0 1px rgba(229, 231, 235, 0.6);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease;
 }
 
 .glass-card-3d:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.45);
   box-shadow:
-    0 30px 50px -15px rgba(28, 25, 23, 0.12),
-    0 10px 20px -5px rgba(28, 25, 23, 0.04),
-    0 0 0 1px rgba(212, 175, 55, 0.4),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+    0 16px 32px -8px rgba(28, 25, 23, 0.1),
+    0 0 0 1px rgba(212, 175, 55, 0.35);
 }
 
 .glass-button-primary {
@@ -97,11 +90,9 @@
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow:
-    0 8px 20px -4px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(0, 0, 0, 0.8),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    0 4px 14px -2px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(0, 0, 0, 0.8);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .glass-button-primary::after {
@@ -114,16 +105,19 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.25),
     transparent
   );
   transform: rotate(25deg);
   pointer-events: none;
-  animation: buttonShimmer 5s infinite ease-in-out;
+}
+
+.glass-button-primary:hover::after {
+  animation: buttonShimmer 0.9s ease-out;
 }
 
 @keyframes buttonShimmer {
-  0%, 75% {
+  0% {
     left: -60%;
   }
   100% {
@@ -179,54 +173,6 @@
     0 4px 12px -2px rgba(0, 0, 0, 0.04),
     0 0 0 1px rgba(229, 231, 235, 0.6),
     inset 0 1px 1px rgba(255, 255, 255, 0.9);
-}
-
-/* Subtle Animated Ambient Mesh Blobs */
-@keyframes floatSlow1 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  50% {
-    transform: translate(30px, -25px) scale(1.05);
-  }
-}
-
-@keyframes floatSlow2 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  50% {
-    transform: translate(-35px, 20px) scale(0.95);
-  }
-}
-
-@keyframes floatSlow3 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  50% {
-    transform: translate(25px, 35px) scale(1.08);
-  }
-}
-
-.animate-blob-1 {
-  animation: floatSlow1 18s ease-in-out infinite;
-}
-
-.animate-blob-2 {
-  animation: floatSlow2 22s ease-in-out infinite;
-}
-
-.animate-blob-3 {
-  animation: floatSlow3 26s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-blob-1,
-  .animate-blob-2,
-  .animate-blob-3 {
-    animation: none !important;
-  }
 }
 
 /* Custom Scrollbar */
