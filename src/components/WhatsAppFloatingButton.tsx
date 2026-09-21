@@ -43,7 +43,7 @@ export function WhatsAppFloatingButton({ onOpenBooking }: WhatsAppFloatingButton
       {/* Mobile Sticky Bottom Floating Action Bar */}
       <div
         id="mobile-sticky-bar"
-        className="fixed bottom-0 inset-x-0 z-40 sm:hidden px-1.5 pt-2.5 pb-[calc(0.65rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-2xl border-t border-neutral-200/90 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]"
+        className="fixed bottom-0 inset-x-0 z-40 sm:hidden px-3 pt-2 pb-[calc(0.65rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-2xl border-t border-neutral-200/90 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]"
       >
         <div className="flex items-center gap-2 max-w-md mx-auto">
           {/* Quick Call */}

@@ -13,29 +13,29 @@ export function InstagramSection() {
     <section
       id="instagram"
       aria-label="Instagram Community"
-      className="py-20 sm:py-28 relative z-10"
+      className="py-10 sm:py-20 lg:py-28 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-        <div className="glass-card-3d rounded-none sm:rounded-3xl p-4 sm:p-12 text-center relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="glass-card-3d rounded-2xl sm:rounded-3xl p-6 sm:p-12 text-center relative overflow-hidden">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <Instagram className="h-3.5 w-3.5 text-pink-600" />
             <span>Social Channel</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 font-display">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 font-display">
             FOLLOW OUR WORK
           </h2>
 
-          <p className="mt-3 text-base sm:text-lg text-neutral-600 max-w-xl mx-auto">
+          <p className="mt-3 text-sm sm:text-lg text-neutral-600 max-w-xl mx-auto">
             See our latest styles, transformations and salon updates.
           </p>
 
-          <div className="mt-4 inline-block text-sm font-bold text-neutral-900 bg-neutral-100/80 px-4 py-1.5 rounded-full border border-neutral-200">
+          <div className="mt-4 inline-block text-xs sm:text-sm font-bold text-neutral-900 bg-neutral-100/80 px-4 py-1.5 rounded-full border border-neutral-200">
             {businessConfig.instagramHandle}
           </div>
 
           {/* Curated visual grid leading to Instagram */}
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {previewShots.map((img, i) => (
               <a
                 key={i}

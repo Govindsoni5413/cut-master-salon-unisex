@@ -11,10 +11,10 @@ export function BookingCTA() {
     <section
       id="booking-cta"
       aria-label="Direct Booking Callout"
-      className="py-16 sm:py-24 relative z-10 overflow-hidden"
+      className="py-10 sm:py-20 relative z-10 overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto px-0 sm:px-6 lg:px-8">
-        <div className="relative rounded-none sm:rounded-3xl p-5 sm:p-14 glass-card-3d border border-white/95 text-center overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08),0_0_0_1px_rgba(229,231,235,0.9),inset_0_1px_2px_rgba(255,255,255,1)]">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-14 glass-card-3d border border-white/95 text-center overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08),0_0_0_1px_rgba(229,231,235,0.9),inset_0_1px_2px_rgba(255,255,255,1)]">
           {/* Floating Glass Decorative Geometry */}
           <motion.div
             animate={{ y: [0, -10, 0], rotate: [0, 4, 0] }}

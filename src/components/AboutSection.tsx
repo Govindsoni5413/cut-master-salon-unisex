@@ -11,10 +11,10 @@ export function AboutSection({ onVisitClick }: AboutSectionProps) {
     <section
       id="about"
       aria-label="About Cut Master Salon"
-      className="py-24 sm:py-32 relative z-10"
+      className="py-12 sm:py-20 lg:py-28 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Visual Image with 3D Glass Framing */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -23,7 +23,7 @@ export function AboutSection({ onVisitClick }: AboutSectionProps) {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-6 relative"
           >
-            <div className="relative rounded-3xl p-3.5 bg-white/75 backdrop-blur-xl border border-white/90 shadow-[0_25px_50px_-12px_rgba(28,25,23,0.1),0_0_0_1px_rgba(229,231,235,0.7),inset_0_1px_2px_rgba(255,255,255,1)]">
+            <div className="relative rounded-3xl p-3 sm:p-3.5 bg-white/75 backdrop-blur-xl border border-white/90 shadow-[0_25px_50px_-12px_rgba(28,25,23,0.1),0_0_0_1px_rgba(229,231,235,0.7),inset_0_1px_2px_rgba(255,255,255,1)]">
               <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-inner group">
                 <img
                   src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop"
@@ -37,14 +37,14 @@ export function AboutSection({ onVisitClick }: AboutSectionProps) {
                 />
 
                 {/* Corner Glass Tag */}
-                <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-white/90 shadow-sm text-xs font-semibold text-neutral-900 flex items-center gap-1.5">
+                <div className="absolute top-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-white/90 shadow-sm text-xs font-semibold text-neutral-900 flex items-center gap-1.5">
                   <Sparkles className="h-3.5 w-3.5 text-amber-600" />
                   <span>Vadodara Flagship</span>
                 </div>
               </div>
 
               {/* Floating Address Snippet */}
-              <div className="mt-3.5 p-4 rounded-2xl bg-white/60 border border-neutral-200/70 flex items-start gap-3">
+              <div className="mt-3.5 p-3.5 sm:p-4 rounded-2xl bg-white/60 border border-neutral-200/70 flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-amber-700 shrink-0 mt-0.5" />
                 <p className="text-xs text-neutral-600 leading-relaxed">
                   Ground Floor SWC Hub, Opp. Rajpath Complex, Vasna - Bhayli Road, Bhayli, Vadodara
@@ -59,7 +59,7 @@ export function AboutSection({ onVisitClick }: AboutSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-6 flex flex-col items-start text-left px-3 sm:px-0"
+            className="lg:col-span-6 flex flex-col items-start text-left"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
               <span>About Us</span>

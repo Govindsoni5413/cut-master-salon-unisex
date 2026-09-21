@@ -19,27 +19,27 @@ export function Gallery() {
     <section
       id="gallery"
       aria-label="Salon Gallery"
-      className="py-24 sm:py-32 relative z-10"
+      className="py-12 sm:py-20 lg:py-28 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 px-3 sm:px-0">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <Camera className="h-3.5 w-3.5 text-amber-600" />
             <span>Visual Portfolio</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 font-display">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 font-display">
             OUR WORK &amp; AMBIANCE
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-neutral-600">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-neutral-600">
             A glimpse into our haircuts, styling transformations, and welcoming salon spaces in Vadodara.
           </p>
         </div>
 
         {/* Gallery Categories */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar overscroll-x-contain snap-x snap-mandatory px-1 sm:px-0">
+        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 sm:mb-10 no-scrollbar overscroll-x-contain snap-x snap-mandatory px-4 sm:px-0 -mx-4 sm:mx-0">
           {galleryCategories.map((cat) => (
             <button
               key={cat}
@@ -56,14 +56,14 @@ export function Gallery() {
         </div>
 
         {/* 3D Glass Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-8">
           {filteredItems.map((item) => (
             <div
               key={item.id}
               onClick={() => setActiveLightboxItem(item)}
-              className="glass-card-3d rounded-2xl sm:rounded-3xl p-1.5 sm:p-3.5 group cursor-pointer text-left relative overflow-hidden touch-manipulation"
+              className="glass-card-3d rounded-2xl sm:rounded-3xl p-2 sm:p-3.5 group cursor-pointer text-left relative overflow-hidden touch-manipulation"
             >
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-inner bg-neutral-100">
+              <div className="relative aspect-[4/3] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-inner bg-neutral-100">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
@@ -78,21 +78,21 @@ export function Gallery() {
                 />
 
                 {/* Tag */}
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/90 text-[10px] font-bold tracking-wider text-neutral-900 uppercase shadow-xs">
+                <div className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/90 text-[9px] sm:text-[10px] font-bold tracking-wider text-neutral-900 uppercase shadow-xs">
                   {item.category}
                 </div>
 
                 {/* Hover Maximize Icon */}
-                <div className="absolute top-3 right-3 h-8 w-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
+                <div className="absolute top-3 right-3 h-8 w-8 rounded-full bg-black/40 backdrop-blur-md text-white hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
                   <Maximize2 className="h-4 w-4" />
                 </div>
 
                 {/* Bottom caption overlay */}
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <div className="font-display text-sm sm:text-base font-bold drop-shadow-sm">
+                <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 text-white">
+                  <div className="font-display text-xs sm:text-base font-bold drop-shadow-sm line-clamp-1">
                     {item.title}
                   </div>
-                  <div className="text-[11px] text-neutral-200 line-clamp-1 mt-0.5">
+                  <div className="text-[10px] sm:text-[11px] text-neutral-200 line-clamp-1 mt-0.5 hidden xs:block">
                     {item.caption}
                   </div>
                 </div>

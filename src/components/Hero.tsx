@@ -12,21 +12,21 @@ export function Hero({ onExploreServices, onOpenBookingModal }: HeroProps) {
     <section
       id="home"
       aria-label="Hero Section"
-      className="relative min-h-[92vh] pt-28 sm:pt-32 pb-16 flex items-center justify-center overflow-hidden"
+      className="relative min-h-[90vh] pt-24 sm:pt-32 pb-12 sm:pb-16 flex items-center justify-center overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* ================= LEFT HERO COLUMN ================= */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 flex flex-col items-start text-left px-3 sm:px-0"
+            className="lg:col-span-7 flex flex-col items-start text-left"
           >
             {/* Location Pill / 3D Label */}
             <div
               id="hero-location-badge"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-semibold tracking-wide text-neutral-800 mb-6"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-semibold tracking-wide text-neutral-800 mb-4 sm:mb-6"
             >
               <MapPin className="h-3.5 w-3.5 text-amber-600" />
               <span>{businessConfig.city}, {businessConfig.state}</span>
@@ -35,15 +35,15 @@ export function Hero({ onExploreServices, onOpenBookingModal }: HeroProps) {
             </div>
 
             {/* Main Brand Headings */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 leading-[1.08]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 leading-[1.1]">
               <span className="font-display block">CUT MASTER</span>
-              <span className="font-display font-medium text-neutral-800 text-3xl sm:text-4xl lg:text-5xl block mt-1">
+              <span className="font-display font-medium text-neutral-800 text-2xl sm:text-4xl lg:text-5xl block mt-1">
                 SALON UNISEX
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="mt-4 text-lg sm:text-xl font-medium text-neutral-800 tracking-tight">
+            <p className="mt-3 sm:mt-4 text-base sm:text-xl font-medium text-neutral-800 tracking-tight">
               Premium Hair &amp; Beauty Experience in Vadodara
             </p>
 
@@ -146,7 +146,7 @@ export function Hero({ onExploreServices, onOpenBookingModal }: HeroProps) {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-3 left-1 sm:-top-4 sm:-left-6 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl glass-card-3d flex items-center gap-2 shadow-lg z-20"
+                className="absolute -top-3 left-2 sm:-top-4 sm:-left-6 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl glass-card-3d flex items-center gap-2 shadow-lg z-20"
               >
                 <div className="h-6 w-6 sm:h-7 sm:w-7 rounded-xl bg-neutral-900 text-amber-300 flex items-center justify-center">
                   <Scissors className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
@@ -161,7 +161,7 @@ export function Hero({ onExploreServices, onOpenBookingModal }: HeroProps) {
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute top-1/4 right-1 sm:top-1/3 sm:-right-8 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl glass-card-3d flex items-center gap-2 shadow-lg z-20"
+                className="absolute top-1/4 right-2 sm:top-1/3 sm:-right-8 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl glass-card-3d flex items-center gap-2 shadow-lg z-20"
               >
                 <div className="h-6 w-6 sm:h-7 sm:w-7 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center">
                   <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5" />

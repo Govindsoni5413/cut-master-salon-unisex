@@ -56,27 +56,27 @@ export function ServiceSection() {
     <section
       id="services"
       aria-label="Salon Services and Pricing"
-      className="py-24 sm:py-32 relative z-10"
+      className="py-12 sm:py-20 lg:py-28 relative z-10"
     >
-      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 px-3 sm:px-0">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-bold tracking-wider uppercase text-neutral-800 mb-4">
             <Sparkles className="h-3.5 w-3.5 text-amber-600" />
             <span>Curated Service Menu</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 font-display">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 font-display">
             EXCEPTIONAL HAIR &amp; BEAUTY
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-neutral-600 font-normal">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-neutral-600 font-normal">
             Transparent pricing, authentic salon craft, and personalized care. Every service can be booked instantly on WhatsApp.
           </p>
         </div>
 
         {/* 3D Category Navigation */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8 -mx-4 sm:mx-0">
           <CategoryNavigation
             selectedCategory={selectedCategory}
             onSelectCategory={handleSelectCategory}
@@ -84,7 +84,7 @@ export function ServiceSection() {
         </div>
 
         {/* Search & Subcategory Controls — Premium High-End Glass Bar */}
-        <div className="mb-8 sm:mb-10 rounded-2xl sm:rounded-3xl bg-white/85 backdrop-blur-xl border border-white/95 shadow-[0_12px_36px_-12px_rgba(20,20,30,0.08),0_0_0_1px_rgba(226,232,240,0.8),inset_0_1px_2px_rgba(255,255,255,1)] p-2 sm:p-4">
+        <div className="mb-8 sm:mb-10 rounded-2xl sm:rounded-3xl bg-white/85 backdrop-blur-xl border border-white/95 shadow-[0_12px_36px_-12px_rgba(20,20,30,0.08),0_0_0_1px_rgba(226,232,240,0.8),inset_0_1px_2px_rgba(255,255,255,1)] p-3 sm:p-4">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3.5 sm:gap-4">
             {/* Subcategories Filter Rail */}
             <div className="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">

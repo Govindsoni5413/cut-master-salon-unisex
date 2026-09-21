@@ -175,7 +175,7 @@ export function Navbar({ onOpenBookingModal }: NavbarProps) {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               id="mobile-nav-drawer"
-              className="md:hidden fixed top-16 inset-x-1 max-w-sm mx-auto glass-pill-scrolled rounded-3xl p-4 sm:p-5 shadow-2xl z-50 border border-white/95 max-h-[85dvh] overflow-y-auto pointer-events-auto"
+              className="md:hidden fixed top-16 inset-x-3 max-w-sm mx-auto glass-pill-scrolled rounded-3xl p-4 sm:p-5 shadow-2xl z-50 border border-white/95 max-h-[85dvh] overflow-y-auto pointer-events-auto"
             >
               {/* Drawer Top Bar */}
               <div className="flex items-center justify-between pb-3 mb-2 border-b border-neutral-200/70">
