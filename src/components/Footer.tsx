@@ -117,7 +117,7 @@ export function Footer() {
 
         {/* Copyright & Scroll to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© 2026 Cut Master Salon Unisex. All rights reserved.</p>
+          <p>© 2026 Cut Master Salon Unisex. Made by Govind. All rights reserved.</p>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1.5 text-neutral-700 hover:text-neutral-950 transition-colors p-1 rounded-lg cursor-pointer"

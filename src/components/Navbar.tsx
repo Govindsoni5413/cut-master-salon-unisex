@@ -72,7 +72,14 @@ export function Navbar({ onOpenBookingModal }: NavbarProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-2.5 sm:px-6 pt-2 sm:pt-4 transition-all duration-300 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-2.5 sm:px-6 pt-1 sm:pt-2 transition-all duration-300 pointer-events-none">
+      {/* Small Attribution above Header */}
+      <div className="pointer-events-auto mb-1 flex items-center justify-center">
+        <span className="text-[9px] sm:text-[10px] font-medium tracking-wider text-neutral-500 uppercase bg-white/85 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/90 shadow-2xs">
+          made by govind
+        </span>
+      </div>
+
       <motion.nav
         initial={{ y: -25, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
